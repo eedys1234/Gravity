@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="picture">
+
+        <item>사진</item>
+        <item>앨범</item>
+
+    </array>
+
+</resources>

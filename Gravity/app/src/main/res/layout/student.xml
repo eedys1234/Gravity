@@ -22,7 +22,7 @@
 
         <ImageView
             android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_height="200dp"
             android:id="@+id/imgView" />
 
         <LinearLayout
@@ -90,47 +90,32 @@
                     android:id="@+id/strGradeView"
                     android:layout_marginLeft="20dp"/>
             </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp">
-
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="@string/strName"
-                        android:id="@+id/strName" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/strName"
+                    android:id="@+id/strName" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="@string/strName"
-                        android:id="@+id/strNameView"
-                        android:layout_marginLeft="20dp"/>
-                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/strName"
+                    android:id="@+id/strNameView"
+                    android:layout_marginLeft="20dp"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp">
 
                 <TextView
@@ -147,8 +132,8 @@
                     android:text="@string/strDepart"
                     android:id="@+id/strDepartView"
                     android:layout_marginLeft="20dp"/>
-            </LinearLayout>
+        </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+    </LinearLayout>
 </LinearLayout>

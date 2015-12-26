@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Gravity</string>
+    <string name="app_name">Gravity Management App</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -18,6 +18,8 @@
     <string name="strDepartment">부서</string>
     <string name="strTotalPeople">총 인원</string>
     <string name="strDelete">삭제</string>
+    <string name="strId">학번</string>
+    <string name="strPassword">비밀번호</string>
 
     <string name="title_activity_view">ViewActivity</string>
     <string name="title_activity_update">UpdateActivity</string>

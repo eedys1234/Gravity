@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -21,7 +22,7 @@ public class LogoActivity extends AppCompatActivity {
 
             public void run() {
 
-                Intent it  = new Intent(LogoActivity.this, FragActivity.class);
+                Intent it  = new Intent(LogoActivity.this, LoginActivity.class);
                 startActivity(it);
                 finish();
             }

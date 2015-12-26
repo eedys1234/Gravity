@@ -22,7 +22,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +41,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,7 +60,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,7 +87,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,9 +106,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:text="@string/strDate"
-            android:id="@+id/txtDate"/>
+            android:id="@+id/txtDate"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -112,18 +117,38 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:gravity="right">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="확인"
-            android:id="@+id/btnConfirm"/>
 
-        <Button
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strReset"
-            android:id="@+id/btnReset"/>
+            android:layout_marginTop="20dp"
+            android:background="#ffffff">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="확인"
+                android:layout_marginRight="0.25dp"
+                android:textColor="#ffffff"
+                android:background="#2988E6"
+                android:id="@+id/btnConfirm"/>
         </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#ffffff">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strReset"
+                android:layout_marginLeft="0.25dp"
+                android:textColor="#ffffff"
+                android:background="#2988E6"
+                android:id="@+id/btnReset"/>
+        </LinearLayout>
+    </LinearLayout>
 
 
 

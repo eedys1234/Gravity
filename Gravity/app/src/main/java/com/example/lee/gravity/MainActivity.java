@@ -2,8 +2,11 @@ package com.example.lee.gravity;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.provider.MediaStore;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -36,6 +39,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final int PICK_FROM_CAMERA = 5;
+    public static final int PICK_FROM_ALBUM= 6;
+    public static final int PICK_FROM_CROP = 7;
+
 
     int year, month, day;
 
@@ -134,6 +142,50 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        imgPicture.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                    showPictureDialog();
+
+            }
+        });
+
+    }
+
+    public void showPictureDialog()
+    {
+       AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+        builder.setTitle("사진 선택")
+                .setItems(R.array.picture, new DialogInterface.OnClickListener()
+                    {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                if(which==0)
+                                {
+                                    PhotoActivity();
+                                }
+                                else if(which==1)
+                                {
+                                    AlbumActivity();
+                                }
+                            }
+                    }
+                ).show();
+
+    }
+
+    public void PhotoActivity()
+    {
+        Intent it = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(it, PICK_FROM_CAMERA);
+    }
+
+    public void AlbumActivity()
+    {
+        Intent it = new Intent(Intent.ACTION_PICK);
+        startActivityForResult(it, PICK_FROM_ALBUM);
     }
 
     private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {

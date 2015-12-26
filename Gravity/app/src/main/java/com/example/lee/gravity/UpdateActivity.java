@@ -4,8 +4,10 @@ import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.preference.DialogPreference;
+import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +41,12 @@ import java.util.ArrayList;
 
 public class UpdateActivity extends AppCompatActivity {
 
+
+    private static final int PICK_FROM_CAMERA = 5;
+    private static final int PICK_FROM_ALBUM = 6;
+    private static final int PICK_FROM_CROP = 7;
+
+
     Intent it;
     TextView txtNum;
     TextView txtName;
@@ -54,11 +63,13 @@ public class UpdateActivity extends AppCompatActivity {
     String strName;
     String strGrade;
     String strDepart;
-
+    ImageView imgPicture;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
+
+        imgPicture = (ImageView)findViewById(R.id.imageView);
         txtNum = (TextView)findViewById(R.id.txtNum);
         txtName = (TextView)findViewById(R.id.txtName);
         txtGrade = (TextView)findViewById(R.id.txtGrade);
@@ -130,6 +141,53 @@ public class UpdateActivity extends AppCompatActivity {
                 .setView(msg).show();
             }
         });
+
+        imgPicture.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                showPictureDialog();
+
+            }
+        });
+
+    }
+
+    public void showPictureDialog()
+    {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("사진 선택")
+                .setItems(R.array.picture, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        if(which == 0)
+                        {
+                            PhotoActivity();
+                        }
+                        else if(which == 1)
+                        {
+                            AlbumActivity();
+                        }
+                    }
+                }).show();
+    }
+
+    public void PhotoActivity()
+    {
+
+        Intent it = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(it, PICK_FROM_CAMERA);
+
+    }
+
+    public void AlbumActivity()
+    {
+        Intent it = new Intent(Intent.ACTION_PICK);
+        startActivityForResult(it, PICK_FROM_ALBUM);
 
     }
 
